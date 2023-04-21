@@ -59,7 +59,7 @@ class FileStorage:
             pass
 
     def close(self):
-        """display our HBNB data
+        """displays HBNB data
         """
         self.reload()
 
