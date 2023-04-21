@@ -1,5 +1,5 @@
-#!/usr/bin/pytho3
-"""a flask script to display C and arg passed”"""
+#!/usr/bin/python3
+"""a flask script to display C and arg passed"""
 from flask import Flask, render_template
 
 

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""a flask script to display C and arg passed”"""
+"""a flask script to display C and arg passed"""
 from flask import Flask
 
 
