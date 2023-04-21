@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
-"""a flask script to display “HBNB!”"""
+"""a flask script to display HBNB"""
 from flask import Flask
 
 
