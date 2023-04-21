@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""a flask script to display Hello HBNB"""
+"""a flask script to display HBNB"""
 from flask import Flask
 
 
@@ -13,4 +13,4 @@ def hbnb():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000)
