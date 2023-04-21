@@ -1,4 +1,4 @@
-#!/usr/bin/pytho3
+#!/usr/bin/python3
 """a flask script to display C and arg passed"""
 from flask import Flask
 
@@ -21,7 +21,7 @@ def index_hbnb():
 @app.route("/c/<text>", strict_slashes=False)
 def index_text(text):
     """Return HBNB"""
-    return f"C {text.replace('_', ' ')}"
+    return "C " + text.replace('_', ' ')
 
 
 if __name__ == "__main__":
