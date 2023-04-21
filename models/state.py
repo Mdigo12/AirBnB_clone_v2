@@ -23,7 +23,7 @@ class State(BaseModel, Base):
 
         @property
         def cities(self):
-            """cities list
+            """cities list in state
             """
             result = []
             for j, i in models.storage.all(models.city.City).items():
