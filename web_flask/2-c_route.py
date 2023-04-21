@@ -1,4 +1,8 @@
+#!/usr/bin/pytho3
+"""a flask script to display C and arg passed”"""
 from flask import Flask
+
+
 app = Flask(__name__)
 
 
