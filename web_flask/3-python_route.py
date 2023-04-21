@@ -26,7 +26,7 @@ def index_text(text):
 
 @app.route("/python", strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
-def index_text(text='is cool'):
+def index_python(text='is cool'):
     """Return HBNB"""
     return "Python " + text.replace('_', ' ')
 
