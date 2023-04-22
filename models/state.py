@@ -26,7 +26,7 @@ class State(BaseModel, Base):
             """cities list in state
             """
             cities_list = []
-            for key, value in models.storage.all(models.city.City).items():
+            for value in models.storage.all(models.city.City).values():
                 if (value.state_id == self.id):
                     cities_list.append(value)
             return cities_list
