@@ -35,44 +35,34 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, arg):
         """Creates a new instance of a Model"""
-        if arg:
-            try:
-                args = arg.split()
-                template = models.dummy_classes[args[0]]
-                new_instance = template()
-                try:
-                    for pair in args[1:]:
-                        pair_split = pair.split("=")
-                        if (hasattr(new_instance, pair_split[0])):
-                            value = pair_split[1]
-                            flag = 0
-                            if (value.startswith('"')):
-                                value = value.strip('"')
-                                value = value.replace("\\", "")
-                                value = value.replace("_", " ")
-                            elif ("." in value):
-                                try:
-                                    value = float(value)
-                                except:
-                                    flag = 1
-                            else:
-                                try:
-                                    value = int(value)
-                                except:
-                                    flag = 1
-                            if (not flag):
-                                setattr(new_instance, pair_split[0], value)
-                        else:
-                            continue
-                    new_instance.save()
-                    print(new_instance.id)
-                except:
-                    new_instance.rollback()
-            except:
-                print("** class doesn't exist **")
-                models.storage.rollback()
-        else:
-            print("** class name missing **")
+        if not arg:
+            raise SyntaxError
+        my_list = arg.split()
+        my_cls = my_list[0]
+        param = my_list[1:]
+        kwargs = {}
+        # print(my_cls)
+        # print(models.dummy_classes[my_cls])
+        try:
+            for pair in param:
+                key, value = pair.split("=")
+                if type(value) == int:
+                    kwargs[key] = value
+                elif type(value) == float:
+                    kwargs[key] = value
+                else:
+                    value = value.replace("_", " ")
+                    kwargs[key] = value.strip('"\'')
+
+            obj = models.dummy_classes[my_cls](**kwargs)
+            models.storage.new(obj)
+            obj.save()
+            print(obj.id)
+
+        except KeyError:
+            print('**Class does not exist**')
+        except SyntaxError:
+             print('**class name missing**')
 
     def do_show(self, arg):
         """string representation of an instance"""
