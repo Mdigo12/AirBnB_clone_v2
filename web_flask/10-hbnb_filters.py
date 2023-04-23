@@ -21,7 +21,6 @@ def list_cities_by_states():
                            states=states_list, amenities=amenity_list)
 
 
-
 @app.teardown_appcontext
 def teardown_session(exception):
     """removes session after each request"""
