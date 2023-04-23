@@ -80,7 +80,8 @@ class DBStorage:
         self.__session = Scope()
 
     def close(self):
-        """displays HBNB data
+        """closes current session and calls a reloads method.
+        this forces changes on reopen
         """
         self.__session.__class__.close(self.__session)
         self.reload()

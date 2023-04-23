@@ -59,7 +59,9 @@ class FileStorage:
             pass
 
     def close(self):
-        """displays HBNB data
+        """closes the current session
+        reload():
+        method for deserializing the JSON file to objects
         """
         self.reload()
 
