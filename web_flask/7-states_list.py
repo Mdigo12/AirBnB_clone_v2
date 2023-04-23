@@ -16,7 +16,6 @@ def list_states():
     states_list = storage.all(State)
     states_list_sort = sorted(states_list.values(),
                               key=lambda state: state.name)
-    print(states_list_sort)
     return render_template('7-states_list.html', states=states_list_sort)
 
 
