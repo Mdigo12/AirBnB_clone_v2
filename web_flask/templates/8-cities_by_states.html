@@ -6,11 +6,9 @@
     <BODY>
         <H1>States</H1>
         <UL>
-            <!-- sort the values in `states` by name -->
             {% for state in states.values() | sort(attribute='name') %}
             <LI>{{state.id}}: <B>{{state.name}}</B></LI>
                 <UL>
-                    <!-- when inside a state, list the sorted cities -->
                     {% for city in state.cities %}
                     <LI>{{city.id}}: <B>{{city.name}}</B></LI>
                     {% endfor %}
