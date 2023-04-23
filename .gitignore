@@ -1,0 +1,6 @@
+console.py.bak
+models/__pycache__/
+models/engine/__pycache__/
+web_flask/__pycache__/
+web_flask/venv/
+web_flask_old_unedited/
