@@ -27,8 +27,7 @@ def cities_in_a_state(stateId):
     for state in states.values():
         if state.id == stateId:
             return render_template('9-states.html', state=state)
-        else:
-            return render_template('9-states.html')
+    return render_template('9-states.html', state=None)
 
 
 @app.teardown_appcontext
